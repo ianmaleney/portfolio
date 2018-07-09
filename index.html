@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script>
+		(function (d) {
+			var config = {
+				kitId: 'onu6xva',
+				scriptTimeout: 3000,
+				async: true
+			},
+				h = d.documentElement, t = setTimeout(function () { h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive"; }, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a; h.className += " wf-loading"; tk.src = 'https://use.typekit.net/' + config.kitId + '.js'; tk.async = true; tk.onload = tk.onreadystatechange = function () { a = this.readyState; if (f || a && a != "complete" && a != "loaded") return; f = true; clearTimeout(t); try { Typekit.load(config) } catch (e) { } }; s.parentNode.insertBefore(tk, s)
+		})(document);
+	</script>
+	<title>Ian Maleney</title>
+	<link rel="prefetch" href="/assets/writing_links.json">
+	<link rel="prefetch" href="/assets/editing_links.json">
+	<link rel="prefetch" href="/assets/web_links.json">
+	<link rel="shortcut icon" href="/favicon.ico" />
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<meta name="theme-color" content="#f59e58">
+</head>
+<style>
+	*, *:before, *:after {
+		box-sizing: inherit;
+	}
+	html {
+		box-sizing: border-box;
+		font-size: 18px;
+		--highlight: #f59e58;
+	}
+	body {
+		font-family: "halyard-display", "Helvetica Neue", Arial, Helvetica, sans-serif;
+	}
+	h1, h2 {
+		font-size: 2.2rem;
+		display: inline-block;
+		position: relative;
+	}
+	p {
+		font-weight: 300;
+		line-height: 1.4;
+	}
+	a {
+		color: black;
+		font-weight: 800;
+		text-decoration: none;
+	}
+	a:hover {
+		color:  var(--highlight)
+	}
+	.section {
+		padding: 1rem 0;
+		border-bottom: 1px solid #ff7300bf;
+	}
+	.section:last-child {
+		border-bottom: none;
+	}
+	.section-head {
+		position: relative;
+		display: inline-block;
+	}
+	.section-head:after, h1:after {
+		content: '';
+		display: block;
+		position: absolute;
+		top: 1.5rem;
+		left: -0.2rem;
+		width: 70%;
+		height: 1.5rem;
+		background-color: #ff7300bf;
+		z-index: -1;
+	}
+	.button__more {
+		font-weight: 800;
+		text-align: right;
+	}
+	.button__more:hover {
+		color:  var(--highlight);
+		cursor: pointer;
+	}
+	.arrow {
+		font-size: 1.2rem;
+	}
+	.slide {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+		overflow-y: scroll;
+		background-color:black;
+		color: white;
+		padding: 60px 1rem;
+		transform: translateX(100vw);
+		transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	}
+	.slide.visible {
+		transform: translateX(0);
+	}
+	.list {
+		list-style: none;
+		padding: 0;
+	}
+	.list__item {
+		margin: 40px 0;
+		display: flex;
+		flex-wrap: wrap;
+		border-bottom: 1px solid  var(--highlight);
+	}
+	.writing-list .list__item {
+		border-bottom: none;
+	}
+	.list__item-link {
+		color: var(--highlight);
+		font-size: 1.4rem;
+		flex: 1 0 100%;
+		margin-bottom: 0.4rem;
+	}
+	.list__item-link:hover {
+		color: white;
+	}
+	.writing-list__item-location {
+		margin-right: 0.8rem;
+		font-weight: 300;
+		font-size: 0.9rem;
+	}
+	.writing-list__item-location:after {
+		content: '\2022';
+		color: var(--highlight);
+		margin-left: 0.8rem;
+	}
+	.writing-list__item-date {
+		font-weight: 300;
+		font-size: 0.9rem;
+	}
+	#slide-close {
+		color: white;
+		font-size: 1.5rem;
+		position: fixed;
+		top: 1.5rem;
+		right: 1.5rem;
+		z-index: 100;
+		pointer-events: none;
+		opacity: 0;
+	}
+	#slide-close.visible {
+		pointer-events: auto;
+		opacity: 1;
+	}
+	#slide-close:hover {
+		color: var(--highlight);
+		cursor: pointer;
+	}
+	@media (min-width: 960px) {
+		.list {
+			padding: 0 40px;
+		}
+		.section-group {
+			max-width: 39vw;
+			text-align: right;
+		}
+		.slide {
+			left: 41vw;
+			width: 59vw;
+			transform: translateX(60vw);
+		}
+	}
+	@media (min-width: 1100px) {
+		.section-group {
+			max-width: 49vw;
+		}
+		.slide {
+			left: 51vw;
+			width: 49vw;
+			transform: translateX(50vw);
+		}
+	}
+</style>
+<body>
+	<header>
+		<h1>Ian Maleney</h1>
+		<p><a href="mailto:imaleney@gmail.com">imaleney@gmail.com</a></p>
+	</header>
+	<div class="section-group">
+		<div class="section">
+			<h2 class="section-head">Writer.</h2>
+			<p>Journalism for the <em>Irish Times</em>, <em>Sunday Times</em>, etc. Essays in the <em>Dublin Review</em>, <em>Winter Papers</em>, <em>gorse</em>. Radio for RTÉ Radio One, Lyric FM, and Raidio Na Life.</p>
+			<p class="button__more" data-id="write">More <span class="arrow">&#8608;</span></p>
+		</div>
+		<div class="section">
+			<h2 class="section-head">Web Designer.</h2>
+			<p>Building and enhancing online platforms for creative organisations like The Stinging Fly, Tramp Press, and Paper Visual Art.</p>
+			<p class="button__more" data-id="web">More <span class="arrow">&#8608;</span></p>
+		</div>
+		<div class="section">
+			<h2 class="section-head">Editor.</h2>
+			<p>Online content at <em>The Stinging Fly</em>. Founding editor at Fallow Media.</p>
+			<p class="button__more" data-id="edit">More <span class="arrow">&#8608;</span></p>
+		</div>
+	</div>
+	<div class="slide"></div>
+	<a id="slide-close">&#10006;</a>
+	<script>
+		const moreButtons = document.querySelectorAll(".button__more");
+		const slider = document.querySelector(".slide");
+		const slideClose = document.getElementById("slide-close");
+		
+		slideClose.addEventListener("click", function() {
+			slideClose.classList.remove("visible");
+			slider.classList.remove("visible");
+		});
+
+		moreButtons.forEach(function(el, i){
+			var g = el.dataset.id;
+			el.addEventListener("click", function(){
+				getData(g);
+			});
+		});
+
+		const getData = function(el) {
+			slider.classList.remove("visible");
+			slider.innerHTML = '';
+			if (el === "write") {
+				getWriting();
+			} 
+			if (el === "edit") {
+				getEditing();
+			}
+			if (el === "web") {
+				getWeb();
+			}
+			slider.classList.add("visible");
+			slideClose.classList.add("visible");
+		}
+
+		const getWriting = function(){
+			fetch('/assets/writing_links.json')
+				.then(r => r.json())
+				.then(r => r.reverse())
+				.then(r => displayWriting(r));
+		}
+
+		const getEditing = function(){
+			fetch('/assets/editing_links.json')
+				.then(r => r.json())
+				.then(r => displayEditing(r));
+		}
+
+		const getWeb = function(){
+			fetch('/assets/web_links.json')
+				.then(r => r.json())
+				.then(r => displayEditing(r));
+		}
+
+		const displayWriting = function (arr) {
+			const list = document.createElement('ul');
+			list.classList.add("list", "writing-list");
+			arr.forEach(el => {
+				var listItem = document.createElement('li');
+				var link = document.createElement('a');
+				var loc = document.createElement('span');
+				var d = document.createElement('span');
+				listItem.classList.add("list__item");
+				link.classList.add("list__item-link");
+				loc.classList.add("writing-list__item-location");
+				d.classList.add("writing-list__item-date");
+				d.innerHTML = el.date;
+				loc.innerHTML = el.location;
+				link.innerHTML = el.title;
+				link.href = el.href;
+				listItem.appendChild(link);
+				listItem.appendChild(loc);
+				listItem.appendChild(d);
+				list.appendChild(listItem);
+			});
+			slider.appendChild(list);
+		}
+		
+		const displayEditing = function (arr) {
+			const list = document.createElement('ul');
+			list.classList.add("list", "editing-list");
+			arr.forEach(el => {
+				var listItem = document.createElement('li');
+				var link = document.createElement('a');
+				var desc = document.createElement('p');
+				listItem.classList.add("list__item");
+				link.classList.add("list__item-link");
+				desc.classList.add("list__item-description");
+				link.innerHTML = el.title;
+				link.href = el.href;
+				desc.innerHTML = el.description;
+				listItem.appendChild(link);
+				listItem.appendChild(desc);
+				list.appendChild(listItem);
+			});
+			slider.appendChild(list);
+		}
+	</script>
+</body>
+</html>

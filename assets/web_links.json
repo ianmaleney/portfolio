@@ -1,0 +1,44 @@
+[
+  {
+    "href": "https://stingingfly.org",
+    "title": "The Stinging Fly",
+    "description":
+      "For the 20th anniversary of Ireland's leading literary magazine, I built a brand new website, migrated six years of blog posts, implemented a new online store, and made twenty years of great writing available online for the first time."
+  },
+  {
+    "href": "https://fallowmedia.com",
+    "title": "Fallow Media",
+    "description":
+      "An experimental, reader-funded online arts publication which combines modern web technologies with longform writing and multimedia projects. Also an ongoing journal of my experiments in web design."
+  },
+  {
+    "href": "http://rsai.ie",
+    "title": "Royal Society of Antiquarians",
+    "description":
+      "I completely redesigned the website of one of Ireland's oldest societies, brought their membership process online, and developed a new events management calendar."
+  },
+  {
+    "href": "https://tramppress.com",
+    "title": "Tramp Press",
+    "description":
+      "I wrote custom Wordpress plugins to enhance the website of one of Ireland's leading independent publishers."
+  },
+  {
+    "href": "http://papervisualart.com",
+    "title": "Paper Visual Art",
+    "description":
+      "I redesigned the website for this beautiful journal of contemporary art criticism."
+  },
+  {
+    "href": "http://wearethemastersons.com/newsite/",
+    "title": "The Mastersons",
+    "description":
+      "I brought an aging website up to date for these creative wedding photographers."
+  },
+  {
+    "href": "https://grayscale.ie/",
+    "title": "Grayscale",
+    "description":
+      "I developed a brand new website for this boundary-pushing audio-visual events company."
+  }
+]
