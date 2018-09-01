@@ -1,47 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<script>
-		(function (d) {
-			var config = {
-				kitId: 'onu6xva',
-				scriptTimeout: 3000,
-				async: true
-			},
-				h = d.documentElement, t = setTimeout(function () { h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive"; }, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a; h.className += " wf-loading"; tk.src = 'https://use.typekit.net/' + config.kitId + '.js'; tk.async = true; tk.onload = tk.onreadystatechange = function () { a = this.readyState; if (f || a && a != "complete" && a != "loaded") return; f = true; clearTimeout(t); try { Typekit.load(config) } catch (e) { } }; s.parentNode.insertBefore(tk, s)
-		})(document);
-	</script>
-	<title>Ian Maleney</title>
-</head>
-
+<include src="html/head.html"></include>
 <body>
 	<div class="grid-wrapper">
-		<header>
-			<div class="title-wrapper">
-				<h1>Ian Maleney</h1>
-				<h2>Writing</h2>
-			</div>
-			<p><a href="mailto:imaleney@gmail.com">imaleney@gmail.com</a></p>
-		</header>
-		<nav class="primary-nav">
-			<ul class="primary-nav__list">
-				<li class="primary-nav__list-item"><a class="nav-link">Writing</a></li>
-				<li class="primary-nav__list-item"><a class="nav-link">Web Design</a></li>
-				<li class="primary-nav__list-item"><a class="nav-link">Other</a></li>
-			</ul>
-		</nav>
+		<include src="html/header.html"></include>
+		<include src="html/nav.html"></include>
 		<main>
 			<p>I have written arts features and criticism for <em>The Irish Times</em>, <em>The Sunday Times</em>, <em>The Wire</em>, <em>The Millions</em>, <em>The Quietus</em>, <em>Red Bull Music Academy</em>, and <em>Tank Magazine</em>.</p>
 			<p>My essays have appeared in <em>The Dublin Review</em>, <em>Winter Papers</em>, and <em>gorse</em>.</p>
 			<p>My first book, a collection of essays entitled <em>Minor Monuments</em>, will be published by Tramp Press in 2019.</p>
 		</main>
 	</div>
-
 	<script src="js/index.js"></script>
 </body>
-
 </html>
