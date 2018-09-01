@@ -37,9 +37,11 @@ var fadein = m.animate([{ opacity: 0 }, { opacity: 1 }], 350);
 
 navLinks.forEach(el => {
   el.addEventListener("click", function(e) {
+    console.log("click");
     fadeout.play();
     let link = el.dataset.link;
     let url = `${link}.html`;
+    console.log(link);
     e.preventDefault();
     navClear();
     el.classList.add("active");
@@ -49,6 +51,7 @@ navLinks.forEach(el => {
         return response.text();
       })
       .then(t => {
+        console.log(t);
         fadeout.onfinish = function() {
           render(t, m);
           history.pushState(link, link, url);
