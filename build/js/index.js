@@ -10,62 +10,64 @@ var navClear = function() {
   });
 };
 
+var linkSet = function(str, el) {
+  let heading = str.replace(/^\w/, c => c.toUpperCase());
+  if (heading === "Index") {
+    el.textContent = "Current Projects";
+  } else {
+    el.textContent = heading;
+  }
+};
+
+var render = function(str, el) {
+  var findMainStart = str.indexOf("<main>");
+  var findMainEnd = str.indexOf("</main>");
+  var sliceStart = findMainStart + 7;
+  var sliceEnd = findMainEnd - 1;
+  var output = str.slice(sliceStart, sliceEnd);
+  el.innerHTML = output;
+};
+
+document.addEventListener("DOMContentLoaded", function() {
+  let pathName = window.location.pathname;
+  let path = pathName.slice(1, pathName.length - 5);
+  linkSet(path, h);
+});
+
 navLinks.forEach(el => {
   el.addEventListener("click", function(e) {
-    navClear();
-    e.preventDefault();
-    el.classList.add("active");
     let link = el.dataset.link;
-    let heading = link.replace(/^\w/, c => c.toUpperCase());
-    if (link === "index") {
-      h.textContent = "Current Projects";
-    } else {
-      h.textContent = heading;
-    }
     let url = `${link}.html`;
+    e.preventDefault();
+    navClear();
+    el.classList.add("active");
+    linkSet(link, h);
     fetch(url)
       .then(function(response) {
         return response.text();
       })
-      .then(function(t) {
-        var findMainStart = t.indexOf("<main>");
-        var findMainEnd = t.indexOf("</main>");
-        var sliceStart = findMainStart + 7;
-        var sliceEnd = findMainEnd - 1;
-        var output = t.slice(sliceStart, sliceEnd);
-        m.innerHTML = output;
+      .then(t => {
+        render(t, m);
         history.pushState(link, link, url);
       });
   });
 });
 
 window.addEventListener("popstate", function(e) {
-  // e.state is equal to the data-attribute of the last image we clicked
-  console.log(e.state);
   let link = e.state;
+  let url = `${link}.html`;
   navClear();
   navLinks.forEach(el => {
     if (el.dataset.link === link) {
       el.classList.add("active");
     }
   });
-  let heading = link.replace(/^\w/, c => c.toUpperCase());
-  if (link === "index") {
-    h.textContent = "Current Projects";
-  } else {
-    h.textContent = heading;
-  }
-  let url = `${link}.html`;
+  linkSet(link, h);
   fetch(url)
     .then(function(response) {
       return response.text();
     })
-    .then(function(t) {
-      var findMainStart = t.indexOf("<main>");
-      var findMainEnd = t.indexOf("</main>");
-      var sliceStart = findMainStart + 7;
-      var sliceEnd = findMainEnd - 1;
-      var output = t.slice(sliceStart, sliceEnd);
-      m.innerHTML = output;
+    .then(t => {
+      render(t, m);
     });
 });
