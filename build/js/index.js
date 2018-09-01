@@ -32,8 +32,12 @@ document.addEventListener("DOMContentLoaded", function() {
   linkSet(path, h);
 });
 
+var fadeout = m.animate([{ opacity: 1 }, { opacity: 0 }], 150);
+var fadein = m.animate([{ opacity: 0 }, { opacity: 1 }], 350);
+
 navLinks.forEach(el => {
   el.addEventListener("click", function(e) {
+    fadeout.play();
     let link = el.dataset.link;
     let url = `${link}.html`;
     e.preventDefault();
@@ -45,8 +49,12 @@ navLinks.forEach(el => {
         return response.text();
       })
       .then(t => {
-        render(t, m);
-        history.pushState(link, link, url);
+        fadeout.onfinish = function() {
+          render(t, m);
+          history.pushState(link, link, url);
+          fadein.play();
+        };
+        //m.classList.remove("fadeout");
       });
   });
 });
