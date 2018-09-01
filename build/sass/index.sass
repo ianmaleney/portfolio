@@ -1,153 +1,86 @@
+$cream: #fdf9f3
+$black: #302d35
+$text: rgba($black, 0.8)
+$ochre: #b7542f
+$spacer: rgba($ochre, 0.1)
+$secondary: rgba($ochre, 0.4)
+
 *, *:before, *:after  
 	box-sizing: inherit 
 	
 html  
 	box-sizing: border-box 
-	font-size: 18px 
-	--highlight: #f59e58 
+	font-size: 16px
 	
 body  
-	font-family: "halyard-display", "Helvetica Neue", Arial, Helvetica, sans-serif 
+	font-family: "itc-galliard", "Helvetica Neue", Helvetica, sans-serif 
+	background-color: $cream
+	color: $black
+
+p
+	font-weight: 300
+	font-size: 0.95rem
+	color: $text
+
+a 
+	color: $ochre
+	&:hover
+		color: $secondary
 	
-h1, h2  
-	font-size: 2.2rem 
-	display: inline-block 
-	position: relative 
-	
-p  
-	font-weight: 300 
-	line-height: 1.4 
-	
-a  
-	color: black 
-	font-weight: 800 
-	text-decoration: none 
-	
-a:hover  
-	color:  var(--highlight)
-	
-.section  
-	padding: 1rem 0 
-	border-bottom: 1px solid #ff7300bf 
-	
-.section:last-child  
-	border-bottom: none 
-	
-.section-head  
-	position: relative 
-	display: inline-block 
-	
-.section-head:after, h1:after  
-	content: '' 
-	display: block 
-	position: absolute 
-	top: 1.5rem 
-	left: -0.2rem 
-	width: 70% 
-	height: 1.5rem 
-	background-color: #ff7300bf 
-	z-index: -1 
-	
-.button__more  
-	font-weight: 800 
-	text-align: right 
-	
-.button__more:hover  
-	color:  var(--highlight) 
-	cursor: pointer 
-	
-.arrow  
-	font-size: 1.2rem 
-	
-.slide  
-	position: fixed 
-	top: 0 
-	left: 0 
-	width: 100vw 
-	height: 100vh 
-	overflow-y: scroll 
-	background-color:black 
-	color: white 
-	padding: 60px 1rem 
-	transform: translateX(100vw) 
-	transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94) 
-	
-.slide.visible  
-	transform: translateX(0) 
-	
-.list  
-	list-style: none 
-	padding: 0 
-	
-.list__item  
-	margin: 40px 0 
-	display: flex 
-	flex-wrap: wrap 
-	border-bottom: 1px solid  var(--highlight) 
-	
-.writing-list .list__item  
-	border-bottom: none 
-	
-.list__item-link  
-	color: var(--highlight) 
-	font-size: 1.4rem 
-	flex: 1 0 100% 
-	margin-bottom: 0.4rem 
-	
-.list__item-link:hover  
-	color: white 
-	
-.writing-list__item-location  
-	margin-right: 0.8rem 
-	font-weight: 300 
-	font-size: 0.9rem 
-	
-.writing-list__item-location:after  
-	content: '\2022' 
-	color: var(--highlight) 
-	margin-left: 0.8rem 
-	
-.writing-list__item-date  
-	font-weight: 300 
-	font-size: 0.9rem 
-	
-#slide-close  
-	color: white 
-	font-size: 1.5rem 
-	position: fixed 
-	top: 1.5rem 
-	right: 1.5rem 
-	z-index: 100 
-	pointer-events: none 
-	opacity: 0 
-	
-#slide-close.visible  
-	pointer-events: auto 
-	opacity: 1 
-	
-#slide-close:hover  
-	color: var(--highlight) 
-	cursor: pointer 
-	
-@media (min-width: 960px)  
-	.list  
-		padding: 0 40px 
+
+.grid-wrapper
+	display: grid
+	grid-template-columns: repeat(8, 1fr)
+	column-gap: 20px
+	row-gap: 20px
+
+header 
+	grid-column: 2 / 8
+	display: flex
+	align-items: baseline
+	justify-content: space-between
+	border-bottom: 1px solid $spacer
+
+.title-wrapper
+	display: flex
+	align-items: baseline
+	h1 
+		margin: 0.7rem 0
+	h2
+		margin-left: 12px
+		font-size: 1.2rem
+		color: $secondary
+		font-weight: normal
 		
-	.section-group  
-		max-width: 39vw 
-		text-align: right 
-		
-	.slide  
-		left: 41vw 
-		width: 59vw 
-		transform: translateX(60vw) 
-		
-	
-@media (min-width: 1100px)  
-	.section-group  
-		max-width: 49vw 
-		
-	.slide  
-		left: 51vw 
-		width: 49vw 
-		transform: translateX(50vw) 
+
+nav 
+	grid-column: 1 / 2
+	border-right: 1px solid $spacer
+	padding-right: 20px
+
+main 
+	grid-column: 2 / 5
+
+.primary-nav__list
+	list-style: none
+	text-align: right
+
+.primary-nav__list-item
+	margin: 8px 0
+	font-weight: 300
+	font-size: 0.95rem
+	a 
+		color: black
+		text-decoration: none
+		&:hover
+			color: $ochre
+
+.current-project
+	margin-bottom: 40px
+
+.project-heading
+	margin: 0.73rem 0 0
+
+.project-body
+	line-height: 1.4rem
+	margin: 0.3rem 0
