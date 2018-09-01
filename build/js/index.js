@@ -24,6 +24,7 @@ var render = function(str, el) {
   var sliceEnd = findMainEnd - 1;
   var output = str.slice(sliceStart, sliceEnd);
   el.innerHTML = output;
+  return;
 };
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -32,12 +33,9 @@ document.addEventListener("DOMContentLoaded", function() {
   linkSet(path, h);
 });
 
-var fadeout = m.animate([{ opacity: 1 }, { opacity: 0 }], 150);
-var fadein = m.animate([{ opacity: 0 }, { opacity: 1 }], 350);
-
 navLinks.forEach(el => {
   el.addEventListener("click", function(e) {
-    fadeout.play();
+    m.classList.add("fade");
     let link = el.dataset.link;
     let url = `${link}.html`;
     e.preventDefault();
@@ -45,13 +43,15 @@ navLinks.forEach(el => {
     el.classList.add("active");
     linkSet(link, h);
     fetch(url)
-      .then(function(response) {
-        return response.text();
+      .then(function(r) {
+        return r.text();
       })
       .then(t => {
         render(t, m);
+      })
+      .then(() => {
         history.pushState(link, link, url);
-        fadein.play();
+        m.classList.remove("fade");
       });
   });
 });
@@ -67,8 +67,8 @@ window.addEventListener("popstate", function(e) {
   });
   linkSet(link, h);
   fetch(url)
-    .then(function(response) {
-      return response.text();
+    .then(function(r) {
+      return r.text();
     })
     .then(t => {
       render(t, m);

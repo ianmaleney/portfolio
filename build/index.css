@@ -57,7 +57,11 @@ nav {
   padding-right: 20px; }
 
 main {
-  grid-column: 2 / 5; }
+  grid-column: 2 / 5;
+  opacity: 1;
+  transition: opacity 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+  main.fade {
+    opacity: 0; }
 
 .primary-nav__list {
   list-style: none;
