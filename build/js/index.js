@@ -1,5 +1,3 @@
-import "../sass/index.sass";
-
 const navLinks = document.querySelectorAll(".nav-link");
 const m = document.querySelector("main");
 const h = document.querySelector(".title-wrapper h2");

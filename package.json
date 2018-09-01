@@ -5,8 +5,9 @@
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "parcel build/index.html",
-    "build": "rm -rf dist/* && parcel build build/index.html --public-url ./ --no-minify"
+    "sass": "node-sass build/sass -o build/ && node-sass build/sass -o dist/",
+    "start": "npm run sass && parcel build/index.html",
+    "build": "rm -rf dist/* && npm run sass && parcel build build/index.html --public-url ./ --no-minify"
   },
   "keywords": [],
   "author": "Ian Maleney",
